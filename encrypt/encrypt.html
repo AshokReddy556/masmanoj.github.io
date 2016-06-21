@@ -49,14 +49,7 @@
 	<br><br><br><br><br><br><br><br><br>manoj
 	<script type="text/javascript">
 		
-		function encryptTxt() {
-			var key =  document.getElementById("publicKey").value;
-			var txt = document.getElementById("plnTxt").value;
-			var encrypt = new JSEncrypt();
-			encrypt.setPublicKey(key);
-			var encTxt = encrypt.encrypt(txt);
-			document.getElementById("encText").value =  encTxt;
-		} 
+		function encryptTxt() {	var key =  document.getElementById("publicKey").value;var txt = document.getElementById("plnTxt").value;var encrypt = new JSEncrypt();encrypt.setPublicKey(key);var encTxt = encrypt.encrypt(txt);document.getElementById("encText").value =  encTxt;} 
 	</script>
 
 </body>
