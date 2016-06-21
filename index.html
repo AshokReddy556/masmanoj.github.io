@@ -1,10 +1,63 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Sample page</title>
+	<script type="text/javascript" src="jsencrypt/bin/jsencrypt.min.js"></script>
+    <title>RSA encryption helper</title>
 </head>
 <body>
-<h2>
-HelloWorld!!
-</h2>
+	<h2>RSA encryption helper</h2>
+
+	<table width="80%">
+		<tr>
+			<td width="20%"> public RSA Key:
+			</td>
+			<td width="80%"> <textarea id="publicKey" name="publicKey" rows="2"  class="form-control" style="width:500px; height:50px;"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td> Plain text:
+			</td>
+			<td> <textarea id="plnTxt" name="plnTxt" rows="2"  class="form-control" style="width:500px; height:50px;"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td> &nbsp;
+			</td>
+			<td> 
+			</td>
+		</tr>
+		<tr>
+			<td> 
+			</td>
+			<td> <button type = "submit" name ="submit" onclick="encryptTxt();">Submit</button>
+			</td>
+		</tr>
+		<tr>
+			<td> &nbsp;
+			</td>
+			<td> 
+			</td>
+		</tr>
+		<tr>
+			<td> Encrypted Text:
+			</td>
+			<td> <textarea id="encText" name="encText" rows="2"  class="form-control" style="width:500px; height:50px;"></textarea>
+			</td>
+		</tr>
+
+	</table>
+	<br><br><br><br><br><br><br><br><br>manoj@novopay.in
+	<script type="text/javascript">
+		
+		function encryptTxt() {
+			var key =  document.getElementById("publicKey").value;
+			var txt = document.getElementById("plnTxt").value;
+			var encrypt = new JSEncrypt();
+			encrypt.setPublicKey(key);
+			var encTxt = encrypt.encrypt(txt);
+			document.getElementById("encText").value =  encTxt;
+		} 
+	</script>
+
 </body>
 </html>
