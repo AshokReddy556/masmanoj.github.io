@@ -31,6 +31,8 @@
 			</td>
 			<td> <button type = "submit" name ="submit" onclick="encryptTxt();">Submit</button>
 			</td>
+			<td> <button type = "submit" name ="submit1" onclick="decryptTxt();">Submit</button>
+			</td>
 		</tr>
 		<tr>
 			<td> &nbsp;
@@ -49,6 +51,13 @@
 	<br><br><br><br><br><br><br><br><br>manoj
 	<script type="text/javascript">
 		
+		function encryptTxt() {	var key =  document.getElementById("publicKey").value;var txt = document.getElementById("plnTxt").value;var encrypt = new JSEncrypt();encrypt.setPublicKey(key);var encTxt = encrypt.encrypt(txt);document.getElementById("encText").value =  encTxt;}
+		function decryptTxt() {	var key =  document.getElementById("publicKey").value;var txt = document.getElementById("plnTxt").value;var decrypt = new JSEncrypt();decrypt.setPrivateKey(key);var encTxt = decrypt.decrypt(txt);document.getElementById("encText").value =  encTxt;} 
+	</script>
+
+</body>
+</html>
+
 		function encryptTxt() {	var key =  document.getElementById("publicKey").value;var txt = document.getElementById("plnTxt").value;var encrypt = new JSEncrypt();encrypt.setPublicKey(key);var encTxt = encrypt.encrypt(txt);document.getElementById("encText").value =  encTxt;} 
 	</script>
 
